@@ -19,6 +19,23 @@ async function insertRecipeFromJSONFile(path) {
     await client.close();
 }
 
+async function getRecipesByName(name) {
+    let client = new MongoClient(uri);
+
+    let rawdata = readFileSync(path);
+    let obj = JSON.parse(rawdata);
+
+    await client.connect();
+
+    let cur = await client
+                .db('recipeApp')
+                .collection('Recipes')
+                .find({'title': {$regex : name}});
+    await client.close();
+
+    return cur
+}
+
 
 
 let adobo_path = '../sample_schemas/recipe.json'
