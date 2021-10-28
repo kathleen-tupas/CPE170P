@@ -1,17 +1,25 @@
 import { MongoClient } from "mongodb";
 import { readFileSync } from 'fs';
 
-let uri = 'mongodb://localhost:27017/';
+const uri = 'mongodb://localhost:27017/';
 
-let client = new MongoClient(uri);
+async function insertRecipeFromJSONFile(path) {
 
-let rawdata = readFileSync('../sample_schemas/recipe.json');
-let adobo = JSON.parse(rawdata);
+    let client = new MongoClient(uri);
 
-await client.connect();
+    let rawdata = readFileSync(path);
+    let obj = JSON.parse(rawdata);
 
-await client
-    .db('recipeApp')
-    .collection('Recipes')
-    .insertOne(adobo);
-await client.close();
+    await client.connect();
+
+    await client
+        .db('recipeApp')
+        .collection('Recipes')
+        .insertOne(obj);
+    await client.close();
+}
+
+
+
+let adobo_path = '../sample_schemas/recipe.json'
+insertRecipeFromJSONFile(adobo_path)
