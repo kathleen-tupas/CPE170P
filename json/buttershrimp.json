@@ -1,0 +1,18 @@
+{
+  "title": "Garlic Butter Shrimp",
+  "ingredients": [
+      {"amt": "2", "unit": "lbs", "name": "shrimp cleaned"},
+      {"amt": "2", "unit": "tbsp", "name": "parsley chopped"},
+      {"amt": "1/4", "unit": "cup", "name": "butter"},
+      {"amt": "1", "unit": "head", "name": "garlic"},
+      {"amt": "1", "unit": "cup", "name": "lemon lime soda"},
+      {"amt": "1", "unit": "teaspoon", "name": "lemon juice"},
+      {"amt": "", "unit": "", "name": "Salt and pepper to taste"}
+  ],
+  "steps": [
+      {"img": "placeholder.jpg", "text": "Do this"},
+      {"img": "placeholder.jpg", "text": "Do this next"},
+      {"img": "placeholder.jpg", "text": "Step 3"},
+      {"img": "placeholder.jpg", "text": "Serve"}
+  ]
+}
