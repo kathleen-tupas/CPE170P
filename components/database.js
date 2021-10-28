@@ -15,7 +15,9 @@ async function insertRecipeFromJSONFile(path) {
     await client
         .db('recipeApp')
         .collection('Recipes')
-        .insertOne(obj);
+        .updateOne({'title': obj.title},
+                   { $set: obj },
+                   {upsert: true});
     await client.close();
 }
 
@@ -27,7 +29,7 @@ async function getRecipesByName(name) {
 
     await client.connect();
 
-    let cur = await client
+    let cur = client
                 .db('recipeApp')
                 .collection('Recipes')
                 .find({'title': {$regex : name}});
@@ -35,7 +37,6 @@ async function getRecipesByName(name) {
 
     return cur
 }
-
 
 
 let adobo_path = '../sample_schemas/recipe.json'
