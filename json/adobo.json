@@ -11,9 +11,9 @@
         {"amt": "", "unit": "", "name": "Salt"}
     ],
     "steps": [
-        {"index": "1", "img": "placeholder.jpg", "text": "Do this"},
-        {"index": "2", "img": "placeholder.jpg", "text": "Do this next"},
-        {"index": "3", "img": "placeholder.jpg", "text": "Step 3"},
-        {"index": "4", "img": "placeholder.jpg", "text": "Serve"}
+        {"img": "placeholder.jpg", "text": "Do this"},
+        {"img": "placeholder.jpg", "text": "Do this next"},
+        {"img": "placeholder.jpg", "text": "Step 3"},
+        {"img": "placeholder.jpg", "text": "Serve"}
     ]
 }
